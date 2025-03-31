@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace me\Farendra\FareEssentials\EventListeners;
+namespace me\FarendraAugust\FareEssentials\EventListeners;
 
-use me\Farendra\FareEssentials\Main;
+use me\FarendraAugust\FareEssentials\Main;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\utils\TextFormat;

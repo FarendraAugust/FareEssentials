@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace me\Farendra\FareEssentials;
+namespace me\FarendraAugust\FareEssentials;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use me\Farendra\FareEssentials\EventListeners\OnPlayerJoinMessage;
-use me\Farendra\FareEssentials\EventListeners\OnPlayerQuitMessage;
+use me\FarendraAugust\FareEssentials\EventListeners\OnPlayerJoinMessage;
+use me\FarendraAugust\FareEssentials\EventListeners\OnPlayerQuitMessage;
 
 class Main extends PluginBase
 {
