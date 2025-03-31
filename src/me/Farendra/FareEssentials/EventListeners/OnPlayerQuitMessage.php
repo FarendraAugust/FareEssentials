@@ -18,7 +18,7 @@ class OnPlayerQuitMessage implements Listener
 		$this->plugin = $plugin;
 	}
 
-	public function onJoin(PlayerQuitEvent $e): void
+	public function onQuit(PlayerQuitEvent $e): void
 	{
 		$player = $e->getPlayer();
 		$name = $player->getName();
@@ -29,6 +29,6 @@ class OnPlayerQuitMessage implements Listener
 
 		$message = str_replace("{player}", $name, $message);
 
-		$e->setJoinMessage(TextFormat::colorize($message));
+		$e->setQuitMessage(TextFormat::colorize($message));
 	}
 }

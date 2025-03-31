@@ -7,6 +7,7 @@ namespace me\Farendra\FareEssentials;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use me\Farendra\FareEssentials\EventListeners\OnPlayerJoinMessage;
+use me\Farendra\FareEssentials\EventListeners\OnPlayerQuitMessage;
 
 class Main extends PluginBase
 {
@@ -22,7 +23,9 @@ class Main extends PluginBase
 		$this->getServer()
 			->getPluginManager()
 			->registerEvents(new OnPlayerJoinMessage($this), $this);
-		$this->getServer()->getPluginManager()->registerEvents(new OnPlayerQuitMessage($this), $this);
+		$this->getServer()
+			->getPluginManager()
+			->registerEvents(new OnPlayerQuitMessage($this), $this);
 
 		$this->getLogger()->info("&aFareEssentials are enable!");
 	}
