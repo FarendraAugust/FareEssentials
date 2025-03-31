@@ -2,21 +2,27 @@
 
 declare(strict_types=1);
 
-namespace me\Farendra\FareEssentials\Main;
+namespace me\Farendra\FareEssentials;
 
 use pocketmine\plugin\PluginBase;
+use pocketmine\event\Listener;
+use me\Farendra\FareEssentials\EventListeners\OnPlayerJoinMessage;
 
 class Main extends PluginBase
 {
-	private Config $configFile;
-
 	public function onEnable(): void
 	{
 		$this->saveDefaultConfig();
-		$this->configFile = new Config(
-			$this->getDataFolder() . "config.yml",
-			Config::YAML
+
+		$this->getLogger()->info(
+			"Config file loaded: " .
+				(file_exists($this->getDataFolder() . "config.yml") ? "Yes" : "No")
 		);
+
+		$this->getServer()
+			->getPluginManager()
+			->registerEvents(new OnPlayerJoinMessage($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new OnPlayerQuitMessage($this), $this);
 
 		$this->getLogger()->info("&aFareEssentials are enable!");
 	}
