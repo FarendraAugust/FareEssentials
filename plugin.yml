@@ -1,0 +1,6 @@
+name: FareEssentials
+version: 1.0
+main: me/Farendra/Essentials/Main
+api: 5.0.0
+author: Farendra
+description: Essentials for your server
